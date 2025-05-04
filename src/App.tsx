@@ -1,25 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { AppContainer, CMSContainer, PreviewContainer } from './styles/layoutStyles';
+import GlobalStyles from './styles/globalStyles';
+import './styles/deviceStyles.css';
+import CMSForm from './components/cms/CMSForm';
+import MobilePreview from './components/preview/MobilePreview';
+import useProductState from './hooks/useProductState';
 
 function App() {
+  const {
+    product,
+    updateField,
+    updateCareInstruction,
+    addCareInstruction,
+    removeCareInstruction
+  } = useProductState();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyles />
+      <AppContainer>
+        <CMSContainer>
+          <CMSForm
+            product={product}
+            updateField={updateField}
+            updateCareInstruction={updateCareInstruction}
+            addCareInstruction={addCareInstruction}
+            removeCareInstruction={removeCareInstruction}
+          />
+        </CMSContainer>
+        <PreviewContainer>
+          <MobilePreview product={product} />
+        </PreviewContainer>
+      </AppContainer>
+    </>
   );
 }
 
