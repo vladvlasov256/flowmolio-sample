@@ -5494,6 +5494,11 @@ flatted@^3.2.9:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.3.3.tgz#67c8fad95454a7c7abebf74bb78ee74a44023358"
   integrity sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg==
 
+flowmolio@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/flowmolio/-/flowmolio-0.1.2.tgz#4f4ff096e81a36e822ea6c18a479ca9ed9d12d53"
+  integrity sha512-BdN8mwy8hoY9tG7dztJd8DEoiTVZQCwrVG7iZAoHHe6KOQdxR3EbP4o44tD4Z+0R9QEkJ4lJW/8IFiY0mROmrw==
+
 follow-redirects@^1.0.0:
   version "1.15.9"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.9.tgz#a604fa10e443bf98ca94228d9eebcc2e8a2c8ee1"

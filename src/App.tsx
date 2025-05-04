@@ -5,6 +5,7 @@ import './styles/deviceStyles.css';
 import CMSForm from './components/cms/CMSForm';
 import MobilePreview from './components/preview/MobilePreview';
 import useProductState from './hooks/useProductState';
+import { usePreviewObject } from './hooks/usePreviewObject';
 
 function App() {
   const {
@@ -14,6 +15,8 @@ function App() {
     addCareInstruction,
     removeCareInstruction
   } = useProductState();
+
+  const previewObject = usePreviewObject();
 
   return (
     <div className={styles.appContainer}>
@@ -27,7 +30,7 @@ function App() {
         />
       </div>
       <div className={styles.previewContainer}>
-        <MobilePreview product={product} />
+        <MobilePreview product={product} previewObject={previewObject} />
       </div>
     </div>
   );
