@@ -1,6 +1,6 @@
 import React from 'react';
-import { AppContainer, CMSContainer, PreviewContainer } from './styles/layoutStyles';
-import GlobalStyles from './styles/globalStyles';
+import styles from './styles/layout.module.scss';
+import './styles/global.scss';
 import './styles/deviceStyles.css';
 import CMSForm from './components/cms/CMSForm';
 import MobilePreview from './components/preview/MobilePreview';
@@ -16,23 +16,20 @@ function App() {
   } = useProductState();
 
   return (
-    <>
-      <GlobalStyles />
-      <AppContainer>
-        <CMSContainer>
-          <CMSForm
-            product={product}
-            updateField={updateField}
-            updateCareInstruction={updateCareInstruction}
-            addCareInstruction={addCareInstruction}
-            removeCareInstruction={removeCareInstruction}
-          />
-        </CMSContainer>
-        <PreviewContainer>
-          <MobilePreview product={product} />
-        </PreviewContainer>
-      </AppContainer>
-    </>
+    <div className={styles.appContainer}>
+      <div className={styles.cmsContainer}>
+        <CMSForm
+          product={product}
+          updateField={updateField}
+          updateCareInstruction={updateCareInstruction}
+          addCareInstruction={addCareInstruction}
+          removeCareInstruction={removeCareInstruction}
+        />
+      </div>
+      <div className={styles.previewContainer}>
+        <MobilePreview product={product} />
+      </div>
+    </div>
   );
 }
 

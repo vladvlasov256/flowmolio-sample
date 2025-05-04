@@ -1,20 +1,7 @@
 import React from 'react';
 import 'devices.css/dist/devices.css';
 import { Product } from '../../types';
-import {
-  MobilePreview as StyledMobilePreview,
-  ProductHeader,
-  ProductImage,
-  ProductInfo,
-  ProductName,
-  ProductShortDescription,
-  ProductStyle,
-  ProductPrice,
-  ProductDescription,
-  ProductDetails,
-  CareInstructions,
-  AddToCartButton
-} from '../../styles/previewStyles';
+import styles from '../../styles/preview.module.scss';
 
 interface MobilePreviewProps {
   product: Product;
@@ -24,39 +11,39 @@ const MobilePreview: React.FC<MobilePreviewProps> = ({ product }) => {
   return (
     <div className="device device-iphone-x">
       <div className="device-frame">
-        <StyledMobilePreview>
-          <ProductHeader>
-            <ProductImage src={product.image_url} alt={product.name} />
-          </ProductHeader>
+        <div className={styles.mobilePreview}>
+          <div className={styles.productHeader}>
+            <img className={styles.productImage} src={product.image_url} alt={product.name} />
+          </div>
           
-          <ProductInfo>
-            <ProductName>{product.name}</ProductName>
-            <ProductShortDescription>{product.short_description}</ProductShortDescription>
-            <ProductStyle>{product.style}</ProductStyle>
-            <ProductPrice>{product.price}</ProductPrice>
+          <div className={styles.productInfo}>
+            <h1 className={styles.productName}>{product.name}</h1>
+            <p className={styles.productShortDescription}>{product.short_description}</p>
+            <p className={styles.productStyle}>{product.style}</p>
+            <p className={styles.productPrice}>{product.price}</p>
             
-            <ProductDescription>
+            <div className={styles.productDescription}>
               <h3>Description</h3>
               <p>{product.description}</p>
-            </ProductDescription>
+            </div>
             
-            <ProductDetails>
+            <div className={styles.productDetails}>
               <h3>Material</h3>
               <p>{product.material}</p>
-            </ProductDetails>
+            </div>
             
-            <CareInstructions>
+            <div className={styles.careInstructions}>
               <h3>Care Instructions</h3>
               <ul>
                 {product.care_instructions.map((instruction, index) => (
                   <li key={index}>{instruction}</li>
                 ))}
               </ul>
-            </CareInstructions>
+            </div>
             
-            <AddToCartButton>Add to Cart</AddToCartButton>
-          </ProductInfo>
-        </StyledMobilePreview>
+            <button className={styles.addToCartButton}>Add to Cart</button>
+          </div>
+        </div>
       </div>
       <div className="device-stripe"></div>
       <div className="device-header"></div>

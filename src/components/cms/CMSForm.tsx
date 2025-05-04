@@ -1,18 +1,7 @@
 import React from 'react';
 import { Product } from '../../types';
 import { imageOptions } from '../../data/initialData';
-import {
-  FormTitle,
-  FormGroup,
-  Label,
-  Input,
-  TextArea,
-  Select,
-  ImagePreview,
-  CareInstructionItem,
-  RemoveButton,
-  AddButton
-} from '../../styles/layoutStyles';
+import styles from '../../styles/layout.module.scss';
 
 interface CMSFormProps {
   product: Product;
@@ -31,51 +20,56 @@ const CMSForm: React.FC<CMSFormProps> = ({
 }) => {
   return (
     <>
-      <FormTitle>Product CMS</FormTitle>
+      <h2 className={styles.formTitle}>Product CMS</h2>
       
-      <FormGroup>
-        <Label htmlFor="name">Product Name</Label>
-        <Input
+      <div className={styles.formGroup}>
+        <label className={styles.label} htmlFor="name">Product Name</label>
+        <input
+          className={styles.input}
           id="name"
           type="text"
           value={product.name}
           onChange={(e) => updateField('name', e.target.value)}
         />
-      </FormGroup>
+      </div>
       
-      <FormGroup>
-        <Label htmlFor="short_description">Short Description</Label>
-        <Input
+      <div className={styles.formGroup}>
+        <label className={styles.label} htmlFor="short_description">Short Description</label>
+        <input
+          className={styles.input}
           id="short_description"
           type="text"
           value={product.short_description}
           onChange={(e) => updateField('short_description', e.target.value)}
         />
-      </FormGroup>
+      </div>
       
-      <FormGroup>
-        <Label htmlFor="style">Style</Label>
-        <Input
+      <div className={styles.formGroup}>
+        <label className={styles.label} htmlFor="style">Style</label>
+        <input
+          className={styles.input}
           id="style"
           type="text"
           value={product.style}
           onChange={(e) => updateField('style', e.target.value)}
         />
-      </FormGroup>
+      </div>
       
-      <FormGroup>
-        <Label htmlFor="price">Price</Label>
-        <Input
+      <div className={styles.formGroup}>
+        <label className={styles.label} htmlFor="price">Price</label>
+        <input
+          className={styles.input}
           id="price"
           type="text"
           value={product.price}
           onChange={(e) => updateField('price', e.target.value)}
         />
-      </FormGroup>
+      </div>
       
-      <FormGroup>
-        <Label htmlFor="image_url">Image URL</Label>
-        <Select
+      <div className={styles.formGroup}>
+        <label className={styles.label} htmlFor="image_url">Image URL</label>
+        <select
+          className={styles.select}
           id="image_url"
           value={product.image_url}
           onChange={(e) => updateField('image_url', e.target.value)}
@@ -85,53 +79,57 @@ const CMSForm: React.FC<CMSFormProps> = ({
               {option.label}
             </option>
           ))}
-        </Select>
-        <ImagePreview>
+        </select>
+        <div className={styles.imagePreview}>
           {product.image_url && <img src={product.image_url} alt="Product preview" />}
-        </ImagePreview>
-      </FormGroup>
+        </div>
+      </div>
       
-      <FormGroup>
-        <Label htmlFor="description">Description</Label>
-        <TextArea
+      <div className={styles.formGroup}>
+        <label className={styles.label} htmlFor="description">Description</label>
+        <textarea
+          className={styles.textArea}
           id="description"
           value={product.description}
           onChange={(e) => updateField('description', e.target.value)}
         />
-      </FormGroup>
+      </div>
       
-      <FormGroup>
-        <Label htmlFor="material">Material</Label>
-        <TextArea
+      <div className={styles.formGroup}>
+        <label className={styles.label} htmlFor="material">Material</label>
+        <textarea
+          className={styles.textArea}
           id="material"
           value={product.material}
           onChange={(e) => updateField('material', e.target.value)}
         />
-      </FormGroup>
+      </div>
       
-      <FormGroup>
-        <Label>Care Instructions</Label>
+      <div className={styles.formGroup}>
+        <label className={styles.label}>Care Instructions</label>
         {product.care_instructions.map((instruction, index) => (
-          <CareInstructionItem key={index}>
-            <Input
+          <div className={styles.careInstructionItem} key={index}>
+            <input
+              className={styles.input}
               type="text"
               value={instruction}
               onChange={(e) => updateCareInstruction(index, e.target.value)}
               placeholder="Care instruction"
             />
-            <RemoveButton
+            <button
+              className={styles.removeButton}
               type="button"
               onClick={() => removeCareInstruction(index)}
               aria-label="Remove instruction"
             >
               ✕
-            </RemoveButton>
-          </CareInstructionItem>
+            </button>
+          </div>
         ))}
-        <AddButton type="button" onClick={addCareInstruction}>
+        <button className={styles.addButton} type="button" onClick={addCareInstruction}>
           Add Instruction
-        </AddButton>
-      </FormGroup>
+        </button>
+      </div>
     </>
   );
 };

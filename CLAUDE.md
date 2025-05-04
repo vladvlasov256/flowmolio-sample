@@ -18,4 +18,4 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **State Management**: Use centralized hooks for shared state when possible
 - **Error Handling**: Use try/catch for async operations; provide user feedback
 - **Components**: Create focused components with clear props interfaces
-- **Styling**: Use styled-components with theme consistency
+- **Styling**: Use SCSS modules instead of styled-components with string constants
