@@ -23,7 +23,7 @@ const CMSForm: React.FC<CMSFormProps> = ({
 }) => {
   return (
     <>
-      <h2 className={styles.formTitle}>Product CMS</h2>
+      <h2 className={styles.formTitle}>{product.name || "Product"}</h2>
       
       <Form.Root className={styles.formRoot} onSubmit={(event) => event.preventDefault()}>
         <Form.Field className={styles.formField} name="name">
