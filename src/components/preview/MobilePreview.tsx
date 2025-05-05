@@ -1,7 +1,6 @@
 import React from 'react';
 import 'devices.css/dist/devices.css';
 import { Product } from '../../types';
-import styles from '../../styles/preview.module.scss';
 import { FlowMolioPreview, PreviewObject } from 'flowmolio';
 
 interface MobilePreviewProps {
