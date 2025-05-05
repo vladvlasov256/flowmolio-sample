@@ -1,7 +1,7 @@
 .appContainer {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: calc(100vh - 55px); /* Adjust for the height of the navigation menu */
   padding: 1rem;
   
   @media (min-width: 768px) {
