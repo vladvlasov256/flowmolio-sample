@@ -2,6 +2,8 @@ import React from 'react';
 import { Product } from '../../types';
 import { imageOptions } from '../../data/initialData';
 import * as Form from '@radix-ui/react-form';
+import * as Select from '@radix-ui/react-select';
+import { ChevronDownIcon } from '@radix-ui/react-icons';
 import styles from '../../styles/form.module.scss';
 
 interface CMSFormProps {
@@ -85,24 +87,39 @@ const CMSForm: React.FC<CMSFormProps> = ({
         </Form.Field>
         
         <Form.Field className={styles.formField} name="image_url">
-          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between' }}>
-            <Form.Label className={styles.formLabel}>Image URL</Form.Label>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <Form.Label className={styles.formLabel}>Photo</Form.Label>
           </div>
-          <Form.Control asChild className={styles.formControl}>
-            <select
-              className={styles.formSelect}
-              value={product.image_url}
-              onChange={(e) => updateField('image_url', e.target.value)}
-            >
-              {imageOptions.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </Form.Control>
-          <div className={styles.imagePreview}>
-            {product.image_url && <img src={product.image_url} alt="Product preview" />}
+          {/* Use a hidden input for form validation */}
+          <input 
+            type="hidden" 
+            name="image_url" 
+            value={product.image_url} 
+          />
+          <div className={`${styles.formControl} ${styles.selectWithIcon}`}>
+            <Select.Root value={product.image_url} onValueChange={(value) => updateField('image_url', value)}>
+              <Select.Trigger className={styles.selectTrigger} aria-label="Image selection">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  {product.image_url && <img src={product.image_url} alt="" className={styles.thumbnail} />}
+                  <Select.Value placeholder="Select a photo" />
+                </div>
+                <Select.Icon className={styles.selectIcon}>
+                  <ChevronDownIcon />
+                </Select.Icon>
+              </Select.Trigger>
+              <Select.Portal>
+                <Select.Content className={styles.selectContent}>
+                  <Select.Viewport className={styles.selectViewport}>
+                    {imageOptions.map((option) => (
+                      <Select.Item key={option.value} value={option.value} className={styles.selectItem}>
+                        <img src={option.value} alt="" className={styles.thumbnail} />
+                        <Select.ItemText>{option.label}</Select.ItemText>
+                      </Select.Item>
+                    ))}
+                  </Select.Viewport>
+                </Select.Content>
+              </Select.Portal>
+            </Select.Root>
           </div>
         </Form.Field>
         
