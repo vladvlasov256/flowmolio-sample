@@ -12,6 +12,7 @@
     flex-direction: row;
     gap: 2rem;
     padding: 2rem;
+    justify-content: space-between; /* Ensure elements use their specified widths */
   }
 }
 
@@ -28,8 +29,8 @@
   }
   
   @media (min-width: 1024px) {
-    flex: 1;
-    max-width: 50%;
+    flex: 2; /* 2 parts for form (2:1 ratio) */
+    max-width: 66%; /* 2/3 of the available width */
     margin-bottom: 0;
     height: calc(100vh - 4rem);
     overflow-y: auto;
@@ -49,8 +50,8 @@
   }
   
   @media (min-width: 1024px) {
-    flex: 1;
-    max-width: 50%;
+    flex: 1; /* 1 part for preview (2:1 ratio) */
+    max-width: 33%; /* 1/3 of the available width */
     justify-content: center;
     padding-top: 0;
   }
