@@ -6,7 +6,7 @@ import * as Select from '@radix-ui/react-select';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 import styles from '../../styles/form.module.scss';
 
-interface CMSFormProps {
+interface ProductFormProps {
   product: Product;
   updateField: (field: keyof Product, value: string | string[]) => void;
   updateCareInstruction: (index: number, value: string) => void;
@@ -14,7 +14,7 @@ interface CMSFormProps {
   removeCareInstruction: (index: number) => void;
 }
 
-const CMSForm: React.FC<CMSFormProps> = ({
+const ProductForm: React.FC<ProductFormProps> = ({
   product,
   updateField,
   updateCareInstruction,
@@ -183,4 +183,4 @@ const CMSForm: React.FC<CMSFormProps> = ({
   );
 };
 
-export default CMSForm;
+export default ProductForm;

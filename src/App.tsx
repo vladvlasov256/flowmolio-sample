@@ -3,7 +3,7 @@ import styles from './styles/layout.module.scss';
 import './styles/global.scss';
 import './styles/deviceStyles.css';
 import './styles/custom-focus.css';
-import CMSForm from './components/cms/CMSForm';
+import ProductForm from './components/cms/ProductForm';
 import MobilePreview from './components/preview/MobilePreview';
 import NavigationMenu from './components/navigation/NavigationMenu';
 import WelcomeToast from './components/toast/WelcomeToast';
@@ -27,7 +27,7 @@ function App() {
       <WelcomeToast />
       <div className={styles.appContainer} style={{ paddingTop: '80px' }}>
         <div className={styles.cmsContainer}>
-          <CMSForm
+          <ProductForm
             product={product}
             updateField={updateField}
             updateCareInstruction={updateCareInstruction}
