@@ -6,6 +6,7 @@ import './styles/custom-focus.css';
 import CMSForm from './components/cms/CMSForm';
 import MobilePreview from './components/preview/MobilePreview';
 import NavigationMenu from './components/navigation/NavigationMenu';
+import WelcomeToast from './components/toast/WelcomeToast';
 import useProductState from './hooks/useProductState';
 import { usePreviewObject } from './hooks/usePreviewObject';
 
@@ -23,6 +24,7 @@ function App() {
   return (
     <>
       <NavigationMenu />
+      <WelcomeToast />
       <div className={styles.appContainer} style={{ paddingTop: '80px' }}>
         <div className={styles.cmsContainer}>
           <CMSForm
