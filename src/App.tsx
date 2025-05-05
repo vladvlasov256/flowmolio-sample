@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './styles/layout.module.scss';
 import './styles/global.scss';
 import './styles/deviceStyles.css';
+import './styles/custom-focus.css';
 import CMSForm from './components/cms/CMSForm';
 import MobilePreview from './components/preview/MobilePreview';
 import useProductState from './hooks/useProductState';

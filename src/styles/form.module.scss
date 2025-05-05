@@ -1,0 +1,175 @@
+.formRoot {
+  width: 100%;
+}
+
+.formField {
+  display: grid;
+  margin-bottom: 1.5rem;
+}
+
+.formLabel {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 35px;
+  color: var(--text-color);
+}
+
+.formControl {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 2px solid #d1d5db; /* Always visible medium gray border */
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  background-color: var(--input-background);
+
+  &:hover {
+    border-color: #9ca3af; /* Darker gray on hover */
+  }
+
+  &:focus-within {
+    border-color: #000; /* Black border when focused */
+    border-width: 2px; /* Same thickness, but more visible due to color */
+  }
+}
+
+.formInput {
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  font-size: 15px;
+  color: var(--text-color);
+  background: transparent;
+
+  &:focus {
+    outline-color: black;
+  }
+
+  &::selection {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.formTextarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 100px;
+  font-size: 15px;
+  color: var(--text-color);
+  box-sizing: border-box;
+  background: transparent;
+  line-height: 1.5;
+
+  &:focus {
+    outline-color: black;
+  }
+
+  &::selection {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.formSelect {
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  font-size: 15px;
+  color: var(--text-color);
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:focus {
+    outline-color: black;
+  }
+}
+
+.formMessage {
+  font-size: 13px;
+  color: tomato;
+  margin-top: 5px;
+}
+
+.imagePreview {
+  width: 100%;
+  margin-top: 1rem;
+  
+  img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.careInstructionItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  gap: 0.5rem;
+}
+
+.removeButton {
+  cursor: pointer;
+  color: tomato;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+  font-size: 1rem;
+  background: transparent;
+  
+  &:hover {
+    background-color: rgba(255, 99, 71, 0.1);
+    color: darkred;
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.addButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 500;
+  height: 40px;
+  background-color: #000;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  margin-top: 0.75rem;
+  
+  &:hover {
+    background-color: #333;
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.formTitle {
+  margin-bottom: 1.5rem;
+  color: #000;
+  font-weight: 600;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
+}

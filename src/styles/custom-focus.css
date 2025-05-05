@@ -1,0 +1,19 @@
+/* Override browser's default focus styles */
+*:focus {
+  outline-color: black !important;
+}
+
+/* WebKit browsers (Chrome, Safari) */
+*:focus-visible {
+  outline-color: black !important;
+}
+
+/* Firefox */
+*:-moz-focusring {
+  outline-color: black !important;
+}
+
+/* Microsoft browsers */
+*::-ms-focus-inner {
+  border-color: black !important;
+}

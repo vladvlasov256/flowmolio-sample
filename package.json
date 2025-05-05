@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@radix-ui/colors": "^3.0.0",
+    "@radix-ui/react-form": "^0.1.4",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
