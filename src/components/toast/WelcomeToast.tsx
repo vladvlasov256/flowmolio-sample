@@ -27,7 +27,7 @@ const WelcomeToast: React.FC = () => {
           Welcome to FlowMolio Demo!
         </Toast.Title>
         <Toast.Description className={styles.toastDescription}>
-          This is a live preview of content managed through a CMS<br/><br/>
+          This is a live preview of content managed through a product information system<br/><br/>
           The preview is designed in Figma and connected to the API with FlowMolio
           <span className={styles.highlightedText}>
             Click "Open Editor" to create your own interactive preview!
