@@ -125,33 +125,44 @@ const ProductForm: React.FC<ProductFormProps> = ({
         
         <Form.Field className={styles.formField} name="description">
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between' }}>
-            <Form.Label className={styles.formLabel}>Description</Form.Label>
+            <div className={styles.labelWithBadge}>
+              <Form.Label className={styles.formLabel}>Description</Form.Label>
+              <span className={styles.comingSoonBadge}>Coming Soon</span>
+            </div>
           </div>
           <Form.Control asChild className={styles.formControl}>
             <textarea
               className={styles.formTextarea}
               value={product.description}
               onChange={(e) => updateField('description', e.target.value)}
+              disabled
             />
           </Form.Control>
         </Form.Field>
         
         <Form.Field className={styles.formField} name="material">
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between' }}>
-            <Form.Label className={styles.formLabel}>Material</Form.Label>
+            <div className={styles.labelWithBadge}>
+              <Form.Label className={styles.formLabel}>Material</Form.Label>
+              <span className={styles.comingSoonBadge}>Coming Soon</span>
+            </div>
           </div>
           <Form.Control asChild className={styles.formControl}>
             <textarea
               className={styles.formTextarea}
               value={product.material}
               onChange={(e) => updateField('material', e.target.value)}
+              disabled
             />
           </Form.Control>
         </Form.Field>
         
         <Form.Field className={styles.formField} name="care_instructions">
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between' }}>
-            <Form.Label className={styles.formLabel}>Care Instructions</Form.Label>
+            <div className={styles.labelWithBadge}>
+              <Form.Label className={styles.formLabel}>Care Instructions</Form.Label>
+              <span className={styles.comingSoonBadge}>Coming Soon</span>
+            </div>
           </div>
           {product.care_instructions.map((instruction, index) => (
             <div className={styles.careInstructionItem} key={index}>
@@ -162,6 +173,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
                   value={instruction}
                   onChange={(e) => updateCareInstruction(index, e.target.value)}
                   placeholder="Care instruction"
+                  disabled
                 />
               </Form.Control>
               <button
@@ -169,6 +181,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
                 type="button"
                 onClick={() => removeCareInstruction(index)}
                 aria-label="Remove instruction"
+                disabled
               >
                 ✕
               </button>

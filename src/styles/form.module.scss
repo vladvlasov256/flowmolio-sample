@@ -33,6 +33,16 @@
     border-color: #000; /* Black border when focused */
     border-width: 2px; /* Same thickness, but more visible due to color */
   }
+
+  &:has(:disabled) {
+    background-color: #f8f9fa;
+    border-color: #e5e7eb;
+    cursor: not-allowed;
+
+    &:hover {
+      border-color: #e5e7eb;
+    }
+  }
 }
 
 .formInput {
@@ -49,6 +59,12 @@
 
   &::selection {
     background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &:disabled {
+    color: #9ca3af;
+    cursor: not-allowed;
+    opacity: 0.7;
   }
 }
 
@@ -69,6 +85,13 @@
   &::selection {
     background-color: rgba(0, 0, 0, 0.1);
   }
+
+  &:disabled {
+    color: #9ca3af;
+    cursor: not-allowed;
+    opacity: 0.7;
+    resize: none;
+  }
 }
 
 .formSelect {
@@ -88,6 +111,13 @@
 
   &:focus {
     outline-color: black;
+  }
+
+  &:disabled {
+    color: #9ca3af;
+    cursor: not-allowed;
+    opacity: 0.7;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23d1d5db' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
   }
 }
 
@@ -255,6 +285,17 @@
   &:focus {
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
   }
+
+  &:disabled {
+    color: #d1d5db;
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: transparent;
+      color: #d1d5db;
+    }
+  }
 }
 
 .addButton {
@@ -280,6 +321,21 @@
   &:focus {
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
   }
+
+  &:disabled {
+    background-color: #e5e7eb;
+    color: #9ca3af;
+    cursor: not-allowed;
+    box-shadow: none;
+
+    &:hover {
+      background-color: #e5e7eb;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
 }
 
 .formTitle {
@@ -292,4 +348,21 @@
   @media (min-width: 768px) {
     font-size: 2rem;
   }
+}
+
+.labelWithBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.comingSoonBadge {
+  background-color: #6b7280;
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
