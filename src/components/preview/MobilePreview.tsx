@@ -2,7 +2,7 @@ import React from 'react';
 import 'devices.css/dist/devices.css';
 import { Product } from '../../types';
 import { FlowMolioPreview } from 'flowmolio';
-import blueprint from '../../data/flowmolio.json';
+import blueprint from '../../data/blueprint.json';
 
 interface MobilePreviewProps {
   product: Product;
