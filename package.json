@@ -2,6 +2,26 @@
   "name": "flowmolio-sample",
   "version": "0.2.0",
   "private": true,
+  "description": "A showcase application demonstrating live preview capabilities for headless CMSs and real-time Figma mockups",
+  "keywords": [
+    "headless-cms",
+    "live-preview",
+    "figma",
+    "mockups",
+    "real-time",
+    "cms-preview",
+    "design-tools",
+    "content-management",
+    "react",
+    "typescript",
+    "flowmolio"
+  ],
+  "author": "Flowmolio",
+  "homepage": "https://flowmolio.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vladvlasov256/flowmolio-sample"
+  },
   "dependencies": {
     "@radix-ui/colors": "^3.0.0",
     "@radix-ui/react-form": "^0.1.4",
