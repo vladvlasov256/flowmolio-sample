@@ -8,7 +8,6 @@ import MobilePreview from './components/preview/MobilePreview';
 import NavigationMenu from './components/navigation/NavigationMenu';
 import WelcomeToast from './components/toast/WelcomeToast';
 import useProductState from './hooks/useProductState';
-import { usePreviewObject } from './hooks/usePreviewObject';
 
 function App() {
   const {
@@ -18,8 +17,6 @@ function App() {
     addCareInstruction,
     removeCareInstruction
   } = useProductState();
-
-  const previewObject = usePreviewObject();
 
   return (
     <>
@@ -36,7 +33,7 @@ function App() {
           />
         </div>
         <div className={styles.previewContainer}>
-          <MobilePreview product={product} previewObject={previewObject} />
+          <MobilePreview product={product} />
         </div>
       </div>
     </>
