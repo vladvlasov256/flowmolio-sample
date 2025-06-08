@@ -14,7 +14,9 @@ const MobilePreview: React.FC<MobilePreviewProps> = ({ product }) => {
   return (
     <div className="device device-iphone-x">
       <div className="device-frame">
-          <FlowMolioPreview className="device-screen" dataSources={dataSources} blueprint={blueprint} />
+        <div className="device-screen">
+          <FlowMolioPreview dataSources={dataSources} blueprint={blueprint} />
+        </div>
       </div>
       <div className="device-stripe"></div>
       <div className="device-header"></div>

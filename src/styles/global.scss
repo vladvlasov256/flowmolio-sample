@@ -57,3 +57,18 @@ input, textarea, select {
 button {
   cursor: pointer;
 }
+
+/* SVG styling for preview */
+.device-screen svg {
+  width: 100% !important;
+  height: auto !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+}
+
+/* Make device-screen content scrollable */
+.device-screen {
+  overflow-y: auto !important;
+  height: 100% !important;
+}
