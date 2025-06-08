@@ -8,18 +8,12 @@ import styles from '../../styles/form.module.scss';
 
 interface ProductFormProps {
   product: Product;
-  updateField: (field: keyof Product, value: string | string[]) => void;
-  updateCareInstruction: (index: number, value: string) => void;
-  addCareInstruction: () => void;
-  removeCareInstruction: (index: number) => void;
+  updateField: (field: keyof Product, value: string) => void;
 }
 
 const ProductForm: React.FC<ProductFormProps> = ({
   product,
-  updateField,
-  updateCareInstruction,
-  addCareInstruction,
-  removeCareInstruction
+  updateField
 }) => {
   return (
     <>
@@ -125,71 +119,28 @@ const ProductForm: React.FC<ProductFormProps> = ({
         
         <Form.Field className={styles.formField} name="description">
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between' }}>
-            <div className={styles.labelWithBadge}>
-              <Form.Label className={styles.formLabel}>Description</Form.Label>
-              <span className={styles.comingSoonBadge}>Coming Soon</span>
-            </div>
+            <Form.Label className={styles.formLabel}>Description</Form.Label>
           </div>
           <Form.Control asChild className={styles.formControl}>
             <textarea
               className={styles.formTextarea}
               value={product.description}
               onChange={(e) => updateField('description', e.target.value)}
-              disabled
             />
           </Form.Control>
         </Form.Field>
         
         <Form.Field className={styles.formField} name="material">
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between' }}>
-            <div className={styles.labelWithBadge}>
-              <Form.Label className={styles.formLabel}>Material</Form.Label>
-              <span className={styles.comingSoonBadge}>Coming Soon</span>
-            </div>
+            <Form.Label className={styles.formLabel}>Material</Form.Label>
           </div>
           <Form.Control asChild className={styles.formControl}>
             <textarea
               className={styles.formTextarea}
               value={product.material}
               onChange={(e) => updateField('material', e.target.value)}
-              disabled
             />
           </Form.Control>
-        </Form.Field>
-        
-        <Form.Field className={styles.formField} name="care_instructions">
-          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between' }}>
-            <div className={styles.labelWithBadge}>
-              <Form.Label className={styles.formLabel}>Care Instructions</Form.Label>
-              <span className={styles.comingSoonBadge}>Coming Soon</span>
-            </div>
-          </div>
-          {product.care_instructions.map((instruction, index) => (
-            <div className={styles.careInstructionItem} key={index}>
-              <Form.Control asChild className={styles.formControl}>
-                <input
-                  className={styles.formInput}
-                  type="text"
-                  value={instruction}
-                  onChange={(e) => updateCareInstruction(index, e.target.value)}
-                  placeholder="Care instruction"
-                  disabled
-                />
-              </Form.Control>
-              <button
-                className={styles.removeButton}
-                type="button"
-                onClick={() => removeCareInstruction(index)}
-                aria-label="Remove instruction"
-                disabled
-              >
-                ✕
-              </button>
-            </div>
-          ))}
-          <button className={styles.addButton} type="button" onClick={addCareInstruction}>
-            Add Instruction
-          </button>
         </Form.Field>
       </Form.Root>
     </>

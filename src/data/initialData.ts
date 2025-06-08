@@ -6,7 +6,6 @@ export interface Product {
   image_url: string;
   description: string;
   material: string;
-  care_instructions: string[];
 }
 
 export const initialProduct: Product = {
@@ -16,13 +15,7 @@ export const initialProduct: Product = {
   price: "$895",
   image_url: "https://try.flowmol.io/images/image1.png",
   description: "The Berkely handbag features a structured silhouette with a sophisticated flap closure and silver-tone turn lock. Crafted from premium suede and leather in a versatile grey tone, this elegant bag includes a top handle and detachable shoulder strap for multiple carrying options.",
-  material: "Suede and leather combination with textile lining. Metal hardware with silver-tone finish.",
-  care_instructions: [
-    "Avoid exposure to moisture and direct sunlight",
-    "Store in the provided dust bag when not in use",
-    "Clean suede with a specialized suede brush",
-    "Treat leather portions with appropriate leather conditioner"
-  ]
+  material: "Suede and leather combination with textile lining. Metal hardware with silver-tone finish.\n- Avoid exposure to moisture and direct sunlight\n- Store in the provided dust bag when not in use\n- Clean suede with a specialized suede brush\n- Treat leather portions with appropriate leather conditioner"
 };
 
 export const imageOptions = [

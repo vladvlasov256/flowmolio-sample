@@ -12,10 +12,7 @@ import useProductState from './hooks/useProductState';
 function App() {
   const {
     product,
-    updateField,
-    updateCareInstruction,
-    addCareInstruction,
-    removeCareInstruction
+    updateField
   } = useProductState();
 
   return (
@@ -27,9 +24,6 @@ function App() {
           <ProductForm
             product={product}
             updateField={updateField}
-            updateCareInstruction={updateCareInstruction}
-            addCareInstruction={addCareInstruction}
-            removeCareInstruction={removeCareInstruction}
           />
         </div>
         <div className={styles.previewContainer}>

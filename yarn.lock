@@ -5540,11 +5540,12 @@ flatted@^3.2.9:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.3.3.tgz#67c8fad95454a7c7abebf74bb78ee74a44023358"
   integrity sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg==
 
-flowmolio@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/flowmolio/-/flowmolio-0.2.0.tgz#308ee1009628dba04d35909053dab1fe400577dd"
-  integrity sha512-y3MYwLWp7/Ri+OXWPSbysYaTqMypmkrfkBBMwgn+Qbsas3eMs4L8wcRkPOYdpc8sRpRQqe2MReYN+xjD81LEdg==
+flowmolio@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/flowmolio/-/flowmolio-0.3.1.tgz#28d89676d6c6f4de2c82e476e3104e8df79b45da"
+  integrity sha512-ZaxkJNDuO7WWlRsexFxqEcMGrDt972KptP2+vXsDNyZ8fQvfp2oDkylwylC17NQtca6lETYtsquWZSuVMPFzzQ==
   dependencies:
+    he "^1.2.0"
     node-html-parser "^7.0.1"
 
 follow-redirects@^1.0.0:
